@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nevermind Setup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0A0A0A;
+    --gray: #6B6B6B;
+    --light: #F5F5F5;
+    --border: #E5E5E5;
+    --accent: #4F46E5;
+    --accent-light: #EEF2FF;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: var(--black);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .nav-version {
+    font-size: 13px;
+    color: var(--gray);
+    background: var(--light);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 120px 48px 96px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 1.0;
+    letter-spacing: -3px;
+    color: var(--black);
+    margin-bottom: 28px;
+  }
+
+  h1 span { color: var(--accent); }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--gray);
+    max-width: 500px;
+    margin-bottom: 52px;
+    line-height: 1.7;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--black);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 32px;
+    border-radius: 12px;
+    border: 2px solid var(--black);
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0 48px;
+  }
+
+  /* STEPS */
+  .steps {
+    padding: 96px 48px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 56px;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step:first-child { border-top: 1px solid var(--border); }
+
+  .step-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--accent);
+    padding-top: 4px;
+  }
+
+  .step-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .step-desc {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  /* REQUIREMENTS */
+  .requirements {
+    padding: 0 48px 96px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .req-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .req-card {
+    background: var(--light);
+    border-radius: 14px;
+    padding: 24px;
+  }
+
+  .req-icon { font-size: 22px; margin-bottom: 14px; }
+
+  .req-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .req-detail { font-size: 14px; color: var(--gray); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+  }
+
+  .footer-links { display: flex; gap: 28px; }
+
+  .footer-links a {
+    font-size: 14px;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover { color: var(--black); }
+
+  @media (max-width: 640px) {
+    nav, footer { padding-left: 24px; padding-right: 24px; }
+    .hero, .steps, .requirements { padding-left: 24px; padding-right: 24px; }
+    .divider { margin: 0 24px; }
+    .step { grid-template-columns: 1fr; gap: 8px; }
+    h1 { letter-spacing: -2px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Nevermind</a>
+  <span class="nav-version">v2.4.1</span>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag">Installation guide</div>
+  <h1>Prêt en<br><span>3 étapes.</span></h1>
+  <p class="hero-sub">Télécharge Nevermind Setup et lance l'installateur. C'est tout.</p>
+  <a href="https://drive.google.com/uc?export=download&id=1OQM6PP4Qawl7gkNi3V63fOXvNJW7MEFg" class="btn-primary">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 8l4 4 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Télécharger Nevermind
+  </a>
+</section>
+
+<hr class="divider">
+
+<section class="steps" id="steps">
+  <div class="section-label">Comment installer</div>
+
+  <div class="step">
+    <div class="step-num">01</div>
+    <div>
+      <div class="step-title">Télécharger</div>
+      <p class="step-desc">Clique sur le bouton ci-dessus pour télécharger le fichier d'installation de Nevermind Setup.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">02</div>
+    <div>
+      <div class="step-title">Lancer l'installateur</div>
+      <p class="step-desc">Ouvre le fichier téléchargé et suis les instructions à l'écran. L'installation prend moins d'une minute.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">03</div>
+    <div>
+      <div class="step-title">Démarrer</div>
+      <p class="step-desc">Lance Nevermind depuis ton bureau ou menu démarrer. Tu es prêt à l'utiliser.</p>
+    </div>
+  </div>
+
+</section>
+
+<hr class="divider">
+
+<section class="requirements" id="requirements">
+  <div class="section-label">Configuration requise</div>
+  <div class="req-grid">
+    <div class="req-card">
+      <div class="req-icon">🖥</div>
+      <div class="req-name">Système</div>
+      <div class="req-detail">Windows 10 / 11</div>
+    </div>
+    <div class="req-card">
+      <div class="req-icon">💾</div>
+      <div class="req-name">Espace disque</div>
+      <div class="req-detail">Minimum 200 Mo disponibles</div>
+    </div>
+    <div class="req-card">
+      <div class="req-icon">⚙️</div>
+      <div class="req-name">Droits admin</div>
+      <div class="req-detail">Requis pour l'installation</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Nevermind</div>
+  <nav class="footer-links">
+    <a href="#">Documentation</a>
+    <a href="#">Support</a>
+  </nav>
+</footer>
+
+</body>
+</html>
